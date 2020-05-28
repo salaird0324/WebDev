@@ -1,0 +1,95 @@
+<!-- 
+    Name: Spencer Laird
+    Pawprint: salf22
+    Date: 11.17.17
+    Description: This page will be the first page the user sees once they click on the code button from the homepage. 
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+            <title>Code</title>
+         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+         <link rel="stylesheet" type="text/css" href="style/codeHomeStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#first").click(function(){
+                    $("#second").slideDown("slow");
+                    $("#third").slideDown("slow");
+                    $("#fourth").slideDown("slow");
+                    $("#fifth").slideDown("slow");
+                });
+            });
+        
+        </script>
+        <style>
+            #first, #second, #third, #fourth, #fifth {
+                    padding: 5px;
+                    text-align: center;
+                    color: white;
+                    background-color: black;
+                    border: solid 1px crimson;
+            }
+            #second, #third, #fourth, #fifth {
+                padding: 10px;
+                display: none;
+            }
+        
+        </style>
+    </head>
+    <body>
+    <center>
+    <h1 id="header">Technical Skills</h1>
+    </center>
+    
+        <div id="first">CLICK TO DROWNDOWN</div>
+        <div id="second">Proficient in C, HTML, CSS</div>
+        <div id="third">Experience with Javascript, Python, SQL and PHP</div>
+        <div id="fourth">Experience in Adobe Premiere, Photoshop and After Effects</div>
+        <div id="fifth">Participated in ThinkBig competition with Raspberry Pi project (Created a fruit ripeness scanner using RGB values)</div>
+   
+        
+    
+        <center><div id="space"> <br></div></center>
+        
+    <center>   
+    <div class="dropdown">
+      <button onclick="dropdown()" class="dropbtn">Projects</button>
+      <div id="drop" class="dropdown-content">
+        <a href="salf22SecondChallenge.html">HTML/CSS</a>
+        <a href="salf22ThirdChallenge.html">Multi-Column Layout</a>
+        <a href="salf22FourthChallenge.html">Tables</a>
+        <a href="salf22SixthChallenge.html">Code Editor</a>
+        <a href="ajaxError.html">PHP</a>
+        <a href="challengeNine.html">AJAX</a>
+        
+      </div>
+     </div>
+        </center>
+    </body>
+
+</html>
+
+<script>
+ //found how to make dropdown from W3schools tutorial.
+function dropdown() {
+    document.getElementById("drop").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>

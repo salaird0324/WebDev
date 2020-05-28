@@ -1,0 +1,104 @@
+ #movieTheatreShowtimes th, #movieTheatreShowtimes td {
+                padding: 5px;
+                font-size: 16pt;
+                border: 3px solid black;
+                font-family: 'Permanent Marker', cursive;
+            }
+            #movieTheatreShowtimes {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            #showtimes {
+                padding: 40px;
+                background-color: slategrey;
+                color: papayawhip;
+                size: 35pt;
+             /*   text-align: center; */
+            }
+            #heading {
+                padding: 35px;
+                background-color: slategrey;
+                color: papayawhip;
+                font-size: 28pt;
+                text-align: center;
+            }
+            .catagory {
+                background-color: papayawhip;
+                text-align: center;
+            }
+            img {
+                height: 200px;
+                text-align: center;
+                display: block;
+                margin: auto
+            }
+            #movieTheatreShowtimes tr:nth-child(2n+2) {
+                background-color: dimgrey;
+            }
+            #movieTheatreShowtimes tc:nth-child(even) {
+                text-align: center;
+            }
+            /*center should be working however it does not appear to be on the page, it appears to be stuck, not even right align will work*/
+            .show {
+                border-bottom: 3px solid black;
+                text-align: center;
+              /*  margin: 5px auto; */
+                padding: 5px;
+                margin: 0 -.3em;
+            }
+            .last {
+                text-align: center;
+                
+            }
+            .early {
+                background-color: crimson;
+               /* border-top: 10px; */
+            }
+            .top {
+                border-top: 3px solid crimson;
+                height: 140px;
+                line-height: 130px;
+                
+                
+               /* margin: -.3em;*/
+                
+            }
+            .rating {
+                text-align: center;
+            }
+.mid{
+    line-height: 130px;
+}
+  #codeButton {
+                   display: inline-block;
+                  padding: 15px 25px;
+                  font-size: 24px;
+                  cursor: pointer;
+                  text-align: center;
+                  text-decoration: none;
+                  outline: none;
+                  color: black;
+                  background-color: crimson;
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+                    #codeButton:hover {background-color: #b6123f}
+
+                #codeButton:active {
+                    background-color: #b6123f;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+        
+#space {
+    padding: 15px;
+}
+
+
+
+
+
+
+
+

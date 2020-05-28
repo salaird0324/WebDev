@@ -1,0 +1,164 @@
+<!--
+    Name: Spencer Laird
+    Pawprint: salf22
+    Date: 11/3/17
+    Description: Web Dev Challenge Nine
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Challenge 9</title>
+    <style>
+        #data {
+            border: solid;
+            border-color: red;
+            width: 50%;
+        }
+        button {
+            border-color: forestgreen;
+            border-collapse: collapse;
+        }
+         #button {
+                   display: inline-block;
+                  padding: 25px 25px;
+                  margin-left: 100px;
+                  font-size: 24px;
+                  cursor: pointer;
+                  text-align: center;
+                  text-decoration: none;
+                  outline: none;
+                  color: black;
+                  background-color: crimson;
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+            
+                #codeButton:hover {background-color: #b6123f}
+
+                #codeButton:active {
+                    background-color: #b6123f;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+
+        #load {
+            display: none;
+        }
+</style>
+
+</head>
+
+<body>
+    <center>
+        <a href = "codeImages/nineCode.html"><button id = "button">Would You like to See the Code?</button></a>
+    </center>
+    <button onclick="home()">Home</button>
+    <button onclick="extractData('xml', 'type')">XML PokeType</button>
+    <button onclick="extractData('xml', 'evo')">XML PokeEvo</button>
+    <button onclick="extractJSONData()">JSON Poke</button>
+    <div id="data">
+    </div>
+    <div id="load">
+        Loading....
+    </div>
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var textInfo = document.getElementById('data');
+
+    function home() {
+
+        textInfo.innerHTML = ''
+        $("#load").show();
+
+        var xmlHttp = new XMLHttpRequest();
+
+        xmlHttp.open("GET", "http://ec2-34-226-140-164.compute-1.amazonaws.com/PublicChallenges/Challenge9/webService.php?content=home", true);
+        xmlHttp.send();
+
+        xmlHttp.onload = function() {
+            $("#load").hide();
+            if (xmlHttp.status == 200) {
+                textInfo.innerHTML = xmlHttp.responseText;
+            }
+        }
+    }
+
+
+    function extractData(type, info) {
+        textInfo.innerHTML = ''
+        $("#load").show();
+
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "http://ec2-34-226-140-164.compute-1.amazonaws.com/PublicChallenges/Challenge9/webService.php?content=data&format=" + type, true);
+        xmlHttp.send();
+
+        xmlHttp.onload = function() {
+            $("#load").hide();
+            if (xmlHttp.status == 200) {
+
+                var xmlDoc = xmlHttp.responseXML;
+                var output = '';
+
+                if (info == 'type') {
+
+                    var name = xmlDoc.getElementsByTagName('name');
+                    var type = xmlDoc.getElementsByTagName('type');
+
+                    for (i = 0; i < name.length; i++) {
+
+                        output += "<li>" + name[i].innerHTML + " is type: "
+                        output += type[i].innerHTML + "</li>"
+                        output += "<br>"
+                    }
+                    textInfo.innerHTML = "<ul>" + output + "</ul>";
+                } else {
+
+                    var name = xmlDoc.getElementsByTagName('name');
+                    var type = xmlDoc.getElementsByTagName('evolution');
+
+                    for (i = 0; i < name.length; i++) {
+
+                        output += "<li>" + name[i].innerHTML + "'s evolution is: "
+                        output += type[i].innerHTML + "</li>"
+                        output += "<br>"
+                    }
+                    textInfo.innerHTML = "<ul>" + output + "</ul>";
+                }
+
+            }
+        }
+    }
+    function extractJSONData() {
+        textInfo.innerHTML = ''
+        $("#load").show();
+
+        var xmlHttp = new XMLHttpRequest();
+
+
+        xmlHttp.open("GET", "http://ec2-34-226-140-164.compute-1.amazonaws.com/PublicChallenges/Challenge9/webService.php?content=data&format=json", true);
+        xmlHttp.send();
+
+
+        xmlHttp.onload = function() {
+
+            $("#load").hide();
+
+            if (xmlHttp.status == 200) {
+                var data = JSON.parse(xmlHttp.responseText);
+                var output = ''
+
+                data.pokedex.pokemon.forEach(function(poke) {
+                    output += "<li>" + poke.name + "'s grow rate is: " + poke.growth + "</li>";
+                })
+
+                textInfo.innerHTML = "<ul>" + output + "</ul>"
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,135 @@
+<!--
+    Name: Spencer Laird
+    Pawprint: salf22
+    Description: this will be a page the user sees if they choose to leave a comment about my page or question and the information will be sent to a personal database.
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+       
+         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+            <title>FORMS</title>
+            <style>
+                #textarea {
+                    height: 400px;
+                    width: 395px;
+                    padding-top: 10px;
+                    border: 10px solid crimson;
+                }
+                body {
+                    background-color: black;
+                }
+                #border {
+                    border: 15px solid crimson;
+                    /*border-collapse: collapse;*/
+                    width: 400px;
+                    height: 395px;
+                    padding-bottom: 35px;
+    
+                }
+                h1 {
+                    text-align: center;
+                    font-family: 'Arimo', sans-serif;
+                    color: Crimson;
+                    font-size: 75px;
+                    border-bottom: 10px solid crimson;
+                    border-top: 10px solid crimson;
+                }
+                #submit {
+                              display: inline-block;
+                              padding: 15px 25px;
+                              font-size: 24px;
+                              cursor: pointer;
+                              text-align: center;
+                              text-decoration: none;
+                              outline: none;
+                              color: black;
+                              background-color: crimson;
+                              border: none;
+                              border-radius: 15px;
+                              box-shadow: 0 9px #999;
+                        }
+                #submit:hover {background-color: #b6123f}
+
+                #submit:active {
+                                background-color: #b6123f;
+                                box-shadow: 0 5px #666;
+                                transform: translateY(4px);
+                            }
+                #space {
+                    padding: 10px;
+                }
+                #message {
+                     display: inline-block;
+                              padding: 15px 25px;
+                              font-size: 24px;
+                              cursor: pointer;
+                              text-align: center;
+                              text-decoration: none;
+                              outline: none;
+                              color: black;
+                              background-color: crimson;
+                              border: none;
+                              border-radius: 15px;
+                              box-shadow: 0 9px #999;
+                        }
+                #message:hover {background-color: #b6123f}
+
+                #message:active {
+                                background-color: #b6123f;
+                                box-shadow: 0 5px #666;
+                                transform: translateY(4px);
+                            }
+                }
+                h3 {
+                    color: crimson;
+                }
+              
+
+
+        
+            </style>
+    </head>
+    <body>
+       
+        <center>
+        <h1 id="head">COMMENTS?</h1>
+        </center>
+        
+        <center>
+        <div id ="message">
+        <h3>Click the Button for a message!</h3>
+        <button type="button" onclick="load()">CLICK</button>
+        </div>
+        </center>
+        
+        <center>
+        
+        <form action="process.php" method="post">
+            <br><textarea id="textarea" name="comment"></textarea><br>
+             <center><div id="space"> <br></div></center> 
+           
+            <button type="submit" id="submit">Submit</button>
+           
+         </form>
+            <center><div id="space"> <br></div></center> 
+        
+        </center>
+    </body>
+</html>
+<script>
+    function load() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200){
+                document.getElementById("message").innerHTML = this.responseText;
+        }
+    }
+    xhttp.open("GET", "message.txt", true);
+    xhttp.send();
+}
+</script>
+

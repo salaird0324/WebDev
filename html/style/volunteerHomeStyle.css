@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+    
+}
+#head {
+     text-align: center;
+    font-family: 'Arimo', sans-serif;
+    color: Crimson;
+    font-size: 75px;
+    border-bottom: 10px solid crimson;
+    border-top: 10px solid crimson;
+    
+
+}
+.otherHeads {
+     text-align: left;
+    font-family: 'Arimo', sans-serif;
+    color: crimson;
+    font-size: 40px;
+    text-decoration: underline;
+}
+ul {
+     font-family: 'Arimo', sans-serif;
+     color: crimson;
+     font-size: 25px;
+     list-style-type: square;
+     
+}
+ul li span {
+    color: dimgray;
+}
+img {
+    height: 270px;
+    width: 450px;
+}
+#showz {
+     border: 10px solid crimson;
+    border-collapse: collapse;
+    width: 560px;
+    height: 250px;
+    border-radius: 2%;
+}
+#vid {
+    border: 10px solid crimson;
+    border-radius: 2%;
+}
+#space {
+    padding: 15px;
+}
+#spacee {
+    padding: 10px;
+}
+.slideShow {
+    border: 5px solid crimson;
+}

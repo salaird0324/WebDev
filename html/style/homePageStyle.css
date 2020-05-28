@@ -1,0 +1,131 @@
+.name {
+    font-family: 'Arimo', sans-serif;
+    color: white;
+    text-align: center;
+}
+    
+.round img{
+            border-radius: 50%;
+            height: 300px;  
+ }
+body {
+    background-color: black;
+  
+}
+#border {
+    border: 2px solid crimson;
+    border-collapse: collapse;
+    width: 300px;
+    height: 295px;
+    
+    
+}
+
+#about {
+   display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: crimson;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+#about:hover {background-color: #b6123f}
+
+#about:active {
+    background-color: #b6123f;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#school:hover {background-color: #b6123f}
+
+#school:active {
+    background-color: #b6123f;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#work:hover {background-color: #b6123f}
+
+#work:active {
+    background-color: #b6123f;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#code:hover {background-color: #b6123f}
+
+#:active {
+    background-color: #b6123f;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+#school {
+     display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: crimson;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+    font-family: 'Arimo', sans-serif;
+    
+}
+#work {
+      display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: crimson;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+     font-family: 'Arimo', sans-serif;
+    
+}
+#code {
+    display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: white;
+  background-color: crimson;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+    font-family: 'Arimo', sans-serif;
+    
+}
+
+#space {
+    padding: 5px;
+}
+#meBorder {
+     border: 2px solid crimson;
+     border-collapse: collapse;
+     width: 301px;
+     border-radius: 50%;
+    height: 301px;  
+    
+}
+#comment {
+    color: white;
+    padding-top: 20%;
+}
+
+        

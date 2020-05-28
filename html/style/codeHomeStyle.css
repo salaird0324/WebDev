@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+}
+#header{
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+    color: Crimson;
+    font-size: 75px;
+    border-bottom: 10px solid crimson;
+    border-top: 10px solid crimson;
+}
+p {
+     font-family: 'Arimo', sans-serif;
+     color: dimgray;
+     font-size: 25px;
+}
+ul {
+     font-family: 'Arimo', sans-serif;
+     color: crimson;
+     font-size: 25px;
+      list-style-type: square;
+     
+}
+ul li span {
+    color: dimgray;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: crimson;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Arimo', sans-serif;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 25px;
+    
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #b6123f;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#space {
+    padding: 25px;
+}
+

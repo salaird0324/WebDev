@@ -1,0 +1,257 @@
+<!-- 
+    Name: Spencer Laird
+    Pawprint: salf22
+    Date: 9/25/17
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+            <title id="title">salf22SixthChallenge</title>
+         <meta charset = "utf-8">
+        <script src="jquery-3.2.1.min.js"></script>
+        
+        <style>
+            #cssCode {
+                height: 250px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+                align-content: center;
+                width: 400px;
+                align-content: center;
+                position: absolute;
+                top: 115px;
+                left: 310px;
+                box-shadow: 5px 5px 5px lightgray;
+                padding-left: 50px;
+    
+            }
+            #htmlCode {
+                
+                height: 250px;
+                border: 1px solid lightgray;
+                border-radius: 10px;
+                width: 400px;
+                box-shadow: 5px 5px 5px lightgray;
+                align-content: center;
+                position: absolute;
+                left: 310px; 
+                top: 400px;
+                right: 10px; 
+                bottom: 5px;
+                padding-left: 50px;
+                
+                
+            }
+            #preview {
+                border: 1px solid grey;
+                border-radius: 10px;
+                 box-shadow: 5px 5px 5px lightgray;
+                align-content: center;
+                height: 548px;
+                width: 310px;
+                float: right;
+                position: absolute;
+                right: 390px;
+                top: 112px;
+                
+            }
+            button {
+                margin-top: 10px;
+                margin-right: 100px;
+                height: 25px;
+            }
+            #launch {
+                position: absolute;
+                left: 500px;
+                top: 655px;
+                 box-shadow: 5px 5px 5px lightgray;
+                bottom: 5px;
+                background-color: red;
+                font-family: fantasy;
+                color: yellow;
+                border: 1px solid red;
+                border-radius: 5px;
+                 
+                
+            }
+            #toggle {
+                 position: absolute;
+                left: 650px;
+                top: 655px;
+                 box-shadow: 5px 5px 5px lightgray;
+                bottom: 5px;
+                 background-color: yellow;
+                font-family: fantasy;
+                color: limegreen;
+                border: 1px solid yellow;
+                border-radius: 5px;
+            }
+            #clear {
+                position: absolute;
+                left: 350px;
+                top: 655px;
+                box-shadow: 5px 5px 5px lightgray;
+                bottom: 5px;
+                
+             background-color: limegreen;
+                font-family: fantasy;
+                color: red;
+                border: 1px solid limegreen;
+                border-radius: 5px;
+            }
+          
+            #wrapper {
+                border: 10px solid limegreen;
+                border-radius: 30px;
+                padding: 5px;
+                margin: 10px auto;
+                
+                
+                
+                width: 1300px;
+                align-content: center;
+                height:600px;
+
+
+            display: flex;
+
+            flex-flow: wrap; 
+            }
+            h1, h2 {
+                text-align: center;
+                color: red;
+                text-decoration: underline;
+                text-decoration-color: limegreen;
+                text-decoration-style: double;
+            }
+             #codeButton {
+                   display: inline-block;
+                  padding: 25px 25px;
+                  margin-left: 100px;
+                  font-size: 24px;
+                  cursor: pointer;
+                  text-align: center;
+                  text-decoration: none;
+                  outline: none;
+                  color: black;
+                  background-color: crimson;
+                  border: none;
+                  border-radius: 15px;
+                  box-shadow: 0 9px #999;
+                }
+            
+                #codeButton:hover {background-color: #b6123f}
+
+                #codeButton:active {
+                    background-color: #b6123f;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+            #space {
+                padding: 15px;
+            }
+        
+           
+            
+        
+        </style>
+        
+    </head>
+    <body>
+         
+        <h1>Sixth Challenge</h1>
+        
+            <div id="wrapper">
+            
+               
+                <textarea id="cssCode" placeholder="CSS..." onclick = "boxShadowFunction()" ondblclick="cssFunction()"></textarea>
+                
+                <div id="preview"></div>
+        
+                <textarea id="htmlCode" placeholder="HTML..." onclick = "boxShadowFunctionHTML()" ondblclick="addHtml()"></textarea>
+            
+           
+        
+            <button id="launch">Launch</button>
+            <button id="toggle">Toggle</button>
+            <button id="clear" ondblclick="changeTitle()">Clear</button>
+            
+            </div>
+        
+        <h2>By: Spencer Laird</h2>
+        
+         <script>
+             
+        
+            function cssFunction(){
+                document.getElementById("cssCode").value = "h4{ color: green; }" + "\n" + "\n" + "p {font-family: cursive, arial; font-size: 22pt;}"
+            };
+
+            function addHtml(){
+                document.getElementById("htmlCode").value ="<h4>Hello World!</h4> \n <p>is it applied?</p>"
+            };
+
+            function changeTitle(){
+                var titlenew = window.prompt("Enter a new title for the page!",'');
+
+                document.title = titlenew;
+
+            };
+            function boxShadowFunction(){
+                document.getElementById("cssCode").style.boxShadow = "10px 10px 10px #7bc1f7";
+            };
+            function boxShadowFunctionHTML(){
+                document.getElementById("htmlCode").style.boxShadow = "10px 10px 10px #7bc1f7";
+            };
+
+
+            document.querySelector("#launch").onclick = function(){
+                var html = document.getElementById('htmlCode')
+                var preview = document.getElementById('preview')
+                var css = document.getElementById('cssCode')
+
+                console.log(html.value)
+                preview.innerHTML = html.value + '<style>'+ css.value + '</style>'
+            };
+
+            document.querySelector("#clear").onclick = function(){
+                var html = document.getElementById('htmlCode')
+                var preview = document.getElementById('preview')
+                console.log(html.value)
+                preview.innerHTML = null
+                html.value = null
+                document.getElementById("cssCode").value=null
+            };
+
+            document.querySelector("#toggle").onclick = function(){
+
+                var html = document.getElementById('htmlCode')
+                var preview = document.getElementById('preview')
+                var css = document.getElementById('cssCode')
+
+
+                if(preview.innerHTML == html.value){
+                    preview.innerHTML = html.value + '<style>'+ css.value + '</style>'
+
+                }else{
+
+                preview.innerHTML = html.value
+                }
+                document.getElementById("toggle").style.backgroundColor = "red"
+            };
+
+   
+        </script>
+         <center> 
+             <a href = "codeImages/sixCode.html"><button id="codeButton">Would you like to see the code?</button></a>
+        </center>
+        
+        <center><div id="space"></div></center>
+    </body>
+
+</html>
+
+        

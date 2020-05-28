@@ -1,0 +1,66 @@
+<!--
+    Name: Spencer Laird
+    Pawprint: salf22
+    Description: This is the first page the user will see once they click on the VOLUNTEER button from the home page
+-->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+            <title>Volunteer</title>
+        
+        
+         <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">  
+         <link rel="stylesheet" type="text/css" href="style/volunteerHomeStyle.css">
+    </head>
+    <body>
+        <center>
+        <h1 id="head">VOLUNTEERING</h1>
+        </center>
+        
+        <h2 class="otherHeads">Down Syndrome Guild of Greater Kansas City</h2>
+        <ul>
+        <li><span>June, 2007 to Present</span></li>
+            <li><span>Volunteer Monitor / Step Up for Down Syndrome Walk & Festival</span></li>
+            <li><span>Assist Step Up Co-Chairs and Volunteer Coordinators regarding all volunteers (200+) at largest Step Up annual fundraiser in the nation</span></li>
+            <li><span>Make sure all shifts are running smoothly and fill in where necesary from start to finish</span></li>
+        </ul>
+        <center>
+        <div id="showz"> 
+        <div id="spacee"></div>
+        <img class="slideShow" src="first.png">
+        <img class="slideShow" src="happy.jpg">
+        <img class="slideShow" src="sign.jpg">
+        <img class="slideShow" src="walk.jpg">
+        </div>
+            <div id="space"></div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RtuKyTxgC-M" id="vid" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+            </center>
+        
+     
+ 
+    </body>
+
+</html>
+
+<script>
+    //learned how to make slideshow from w3schools tutorial
+    var index = 0;
+    slidez();
+    
+    
+    function slidez() {
+        var i;
+        var x = document.getElementsByClassName("slideShow");
+        for (i=0; i < x.length; i++) {
+            x[i].style.display="none";
+        }
+        
+        index++
+        
+        if(index > x.length) {index = 1}
+        x[index-1].style.display = "block";
+        setTimeout(slidez, 4000);
+    }
+</script>

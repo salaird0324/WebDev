@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    
+}
+#head {
+     text-align: center;
+    font-family: 'Arimo', sans-serif;
+    color: Crimson;
+    font-size: 75px;
+    border-bottom: 10px solid crimson;
+    border-top: 10px solid crimson;
+    
+
+}
+.otherHeads {
+     text-align: left;
+    font-family: 'Arimo', sans-serif;
+    color: crimson;
+    font-size: 40px;
+    text-decoration: underline;
+}
+ul {
+     font-family: 'Arimo', sans-serif;
+     color: crimson;
+     font-size: 25px;
+     list-style-type: square;
+     
+}
+ul li span {
+    color: dimgray;
+}
+#mu {
+    width: 400px;
+    height 250px;
+}
+#summitTech {
+    width: 350px;
+    padding-right: 45px;
+}
+#lsw {
+    width: 300px;
+    padding-right: 75px;
+}
